@@ -8,3 +8,30 @@ name = "site"
 
 # This page should be the root of your website. It's important.
 page = "https://songminsubway.notion.site/test-rollup-and-calculate-1c2cfee92d958017b28bde423266ffe9?pvs=4"
+
+
+## Global Site Settings ##
+# this [site] table defines override settings for the whole site
+# later on we will see how to define settings for a single page
+[site]
+  ## Custom Meta Tags ##
+  # defined as an array of tables (double square brackets)
+  # each key in the table maps to an atttribute in the tag
+  # the following adds the tag <meta name="title" content="Loconotion Test Site"/>
+  [[site.meta]]
+  name = "title"
+  content = "Fabiano J. M. Manschein"
+  [[site.meta]]
+  name = "description"
+  content = "Fabiano's personal website"
+  ## Custom Element Injection ##
+  # defined as an array of tables [[site.inject]], followed by 'head' or 'body' to set
+  # the injection point, followed by name of the tag to inject
+  # each key in the table maps to an atttribute in the tag
+  # e.g. the following injects this tag in the <head>:
+  #   <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  [[site.inject.head.link]]
+  rel="icon"
+  sizes="64x64 32x32 24x24 16x16"
+  type="image/x-icon"
+  href="/favicon.ico"
